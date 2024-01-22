@@ -1,3 +1,8 @@
-export default function Home() {
-	return <main className="text-red-500">hello world</main>;
+import { redirect } from "next/navigation";
+
+export default function Page() {
+	const accessDenied = true;
+	if (accessDenied) {
+		redirect("/sign-in");
+	}
 }
