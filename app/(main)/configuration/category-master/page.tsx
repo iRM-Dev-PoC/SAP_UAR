@@ -10,19 +10,24 @@ import {
 } from "@ui5/webcomponents-react";
 
 import bin from "@ui5/webcomponents-icons/dist/delete.js";
-import TableComponent from "@/components/Table";
 
 const categorymaster = () => {
   return (
-    <div>
-      <div className="flex justify-between m-9">
-
-        <p>Category Master</p>
-        <Button className="text-white bg-black">Create</Button>
+    <div className=" p-2">
+      <div className="bg-white h-[8vh] p-2  flex justify-between align-middle rounded-t-lg">
+        <div className=" text-black mt-1 text-xl font-bold">
+          Category Master
+        </div>
+        <div className="ml-3">
+          <Button className="hover:opacity-60  border border-black">
+            Create
+          </Button>
+        </div>
       </div>
-      <div className="flex justify-center items-center">
+      <div>
         <Table
-          style={{ width: "1150px" }}
+          className="border border-gray-300"
+          // style={{ width: "1150px" }}
           columns={
             <>
               <TableColumn>
