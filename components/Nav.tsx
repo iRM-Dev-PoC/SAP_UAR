@@ -2,14 +2,16 @@
 
 import React from "react";
 import {
-	ShellBar,
-	StandardListItem,
-	Avatar,
-	Icon,
-	Input,
-	ShellBarItem,
+  ShellBar,
+  StandardListItem,
+  Avatar,
+  Icon,
+  Input,
+  ShellBarItem,
+  Button,
 } from "@ui5/webcomponents-react";
 import Image from "next/image";
+
 
 
 const NavBar = () => {
@@ -67,5 +69,6 @@ const NavBar = () => {
 		</div>
 	);
 };
+
 
 export default NavBar;

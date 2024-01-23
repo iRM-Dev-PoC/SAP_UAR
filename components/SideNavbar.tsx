@@ -4,9 +4,9 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 import {
-	SideNavigation,
-	SideNavigationItem,
-	SideNavigationSubItem,
+  SideNavigation,
+  SideNavigationItem,
+  SideNavigationSubItem,
 } from "@ui5/webcomponents-react";
 import speed from "@ui5/webcomponents-icons/dist/performance.js";
 import review from "@ui5/webcomponents-icons/dist/manager-insight.js";
@@ -17,6 +17,7 @@ import equipment from "@ui5/webcomponents-icons/dist/add-equipment.js";
 import employee from "@ui5/webcomponents-icons/dist/add-employee.js";
 
 const SideNavbar = () => {
+
 	const handleOnNavigate = (path: string) => {
 		router.push(path);
 	};
@@ -77,6 +78,7 @@ const SideNavbar = () => {
 			</SideNavigation>
 		</div>
 	);
+
 };
 
 export default SideNavbar;
