@@ -1,18 +1,26 @@
-'use client'
-import React from 'react';
-import { Label, Table, TableCell, TableColumn, TableRow, Select, Option, Button } from '@ui5/webcomponents-react';
-import saveBtn from '@ui5/webcomponents-icons/dist/save.js';
+"use client";
+import React from "react";
+import {
+  Label,
+  Table,
+  TableCell,
+  TableColumn,
+  TableRow,
+  Select,
+  Option,
+  Button,
+} from "@ui5/webcomponents-react";
+import saveBtn from "@ui5/webcomponents-icons/dist/save.js";
 // import Image from 'next/image';
-import {SaveIcon} from 'lucide-react'
-
+import { SaveIcon } from "lucide-react";
 
 const page = () => {
   return (
-    <div  className=' p-2' >
-      <div className='bg-white h-[8vh] p-2  flex justify-between align-middle rounded-t-lg'>
-        <div className=' text-black mt-1 text-xl font-bold'>Role Scoping</div>
-        <div className='ml-3'>
-          <Button className='hover:opacity-60  border border-black'>
+    <div className=" p-2">
+      <div className="bg-white h-[8vh] p-2  flex justify-between align-middle rounded-t-lg">
+        <div className=" text-black mt-1 text-xl font-bold">Role Scoping</div>
+        <div className="ml-3">
+          <Button className="hover:opacity-60  border border-black">
             Create
           </Button>
         </div>
@@ -177,4 +185,5 @@ const page = () => {
   )
 }
 
-export default page
+
+export default page;
