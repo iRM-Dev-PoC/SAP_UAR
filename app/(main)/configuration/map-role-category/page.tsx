@@ -21,7 +21,7 @@ const page = () => {
     columns={<><TableColumn style={{width: 'auto', border: '1px solid black'}}><Label>Rownum</Label></TableColumn><TableColumn minWidth={800} popinText="Roleguid"><Label>Role Guid</Label></TableColumn><TableColumn demandPopin minWidth={600} popinText="RoleDescription"><Label>Role Description</Label></TableColumn><TableColumn demandPopin minWidth={600} popinText="CategoryList"><Label>Category List</Label></TableColumn><TableColumn><Label>Save Btn</Label></TableColumn></>}
   >
     <TableRow>
-      <TableCell className=' border-gray-300'>
+      <TableCell>
         <Label className=''>
           1
         </Label>
@@ -31,7 +31,7 @@ const page = () => {
         ESA40FSAB09590D7E040F00AC6466664
         </Label>
       </TableCell>
-      <TableCell className=' border-gray-300'>
+      <TableCell>
         <Label>
           Employee
         </Label>
@@ -52,14 +52,14 @@ const page = () => {
           </Option>
         </Select>
       </TableCell>
-      <TableCell className=' border-gray-600 '>
+      <TableCell>
         <button className='border border-black rounded-md mt-1 ml-5'>
           <SaveIcon className=' opacity-80 p-1' size={30} />
         </button>
       </TableCell>
     </TableRow>
     <TableRow>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
         <Label>
           2
         </Label>
@@ -69,7 +69,7 @@ const page = () => {
         F4126C2228F46087E040548C2C046250
         </Label>
       </TableCell>
-      <TableCell className=''>
+      <TableCell>
         <Label>
           GSE Employee UI Developer
         </Label>
@@ -90,29 +90,29 @@ const page = () => {
           </Option>
         </Select>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
       <button className='border border-black rounded-md mt-1 ml-5'>
           <SaveIcon className='opacity-80 p-1' size={30} />
         </button>
       </TableCell>
     </TableRow>
     <TableRow>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
         <Label>
           3
         </Label>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell className='border-x border-gray-300'>
         <Label>
         CD600FC807A44688A80057A27E67E2CO
         </Label>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
         <Label>
           GSE_Environment, Health and Safety Employee
         </Label>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell className='border-x border-gray-300'>
       <Select className='border border-black'>
           <Option >
             -Select Category-
@@ -128,29 +128,29 @@ const page = () => {
           </Option>
         </Select>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
       <button className='border border-black rounded-md mt-1 ml-5'>
           <SaveIcon className='opacity-80 p-1' size={30} />
         </button>
       </TableCell>
     </TableRow>
     <TableRow>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
         <Label>
           4
         </Label>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell className='border-x border-gray-300'>
         <Label>
         FB27BAZAAFDB43509217B3FSRAAFASID
         </Label>
       </TableCell>
-      <TableCell className=' border-gray-600'>
+      <TableCell>
         <Label>
           ACCESS_FA_DIGITAL_ASSISTANT
         </Label>
       </TableCell>
-      <TableCell className='border-x border-gray-600'>
+      <TableCell className='border-x border-gray-300'>
       <Select className='border border-black'>
           <Option >
             -Select Category-
