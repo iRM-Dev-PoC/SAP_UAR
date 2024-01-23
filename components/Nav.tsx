@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import {
@@ -10,6 +10,7 @@ import {
 	ShellBarItem,
 } from "@ui5/webcomponents-react";
 import Image from "next/image";
+
 
 const NavBar = () => {
 	return (
@@ -31,12 +32,6 @@ const NavBar = () => {
 					</>
 				}
 				notificationsCount="10"
-				// onCoPilotClick={function _a() {}}
-				// onLogoClick={function _a() {}}
-				// onMenuItemClick={function _a() {}}
-				// onNotificationsClick={function _a() {}}
-				// onProductSwitchClick={function _a() {}}
-				// onProfileClick={function _a() {}}
 				primaryTitle="Shell Bar"
 				profile={
 					<Avatar>
