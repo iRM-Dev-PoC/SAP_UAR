@@ -3,6 +3,7 @@ import DashBoard from "@/components/DashBoard";
 import AnalyticalCardComp from "@/components/AnalyticalCardComp";
 import PieChartComp from "@/components/PieChartComp";
 import BarChartComp from "@/components/BarChartComp";
+import TimeLineChartComp from "@/components/TimeLineChartComp";
 
 const page = () => {
 	return (
@@ -21,6 +22,9 @@ const page = () => {
 				<div className="flex-1">
 					<BarChartComp />
 				</div>
+			</div>
+			<div className="mt-3 mr-7 ml-3 mb-5">
+				<TimeLineChartComp />
 			</div>
 		</div>
 	);

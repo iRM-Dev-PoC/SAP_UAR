@@ -60,7 +60,7 @@ const SignIn = () => {
 				</div>
 				<div className="mt-6">
 					<button
-						className="bg-slate-400 p-3 rounded-full text-white hover:scale-105 hover:bg-slate-900 hover:text-white transition-all w-full"
+						className="bg-slate-700 p-3 rounded-full text-white hover:scale-105 hover:bg-slate-900 hover:text-white transition-all w-full"
 						type="submit">
 						Sign In
 					</button>
