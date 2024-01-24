@@ -8,7 +8,7 @@ const FileUpload = () => {
     <div className='bg-slate-200 h-[90vh] p-2 overflow-hidden '>
       <h1 className='bg-white font font-medium p-2 border rounded-t-lg border-gray-400'>Data Upload</h1>
       <div className='bg-white p-4 border border-gray-400 flex gap-4 rounded-b-lg'>
-          <Table className='h-[60vh] border border-gray-400 rounded-md shadow-md'
+          <Table className='h-[55vh] border border-gray-400 rounded-md shadow-md'
             accessibleName=""
             columns={<><TableColumn style={{width: '2rem'}}><Label>Sync ID</Label></TableColumn><TableColumn minWidth={200} popinText="For Period"><Label>For Period</Label></TableColumn><TableColumn demandPopin minWidth={200} popinText="Report Name"><Label>Report Name</Label></TableColumn><TableColumn demandPopin minWidth={200} popinText="Synced At"><Label>Synced At</Label></TableColumn><TableColumn><Label>Synced By</Label></TableColumn><TableColumn><Label>Process Started At</Label></TableColumn><TableColumn><Label>Process Started By</Label></TableColumn><TableColumn><Label>Preview</Label></TableColumn></>}
           >
@@ -65,7 +65,7 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  Q1-U3-Dev
+                  Q1-U2-Dev
                 </Label>
               </TableCell>
               <TableCell>
@@ -75,8 +75,8 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  21/01/2024
-                  10:17:46
+                  11/01/2024
+                  16:17:18
                 </Label>
               </TableCell>
               <TableCell>
@@ -86,8 +86,8 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  25/01/2024
-                  12:43:38
+                  16/01/2024
+                  22:30:48
                 </Label>
               </TableCell>
               <TableCell>
@@ -110,7 +110,7 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  Q1-U3-Dev
+                  Q1-U2-Dev
                 </Label>
               </TableCell>
               <TableCell>
@@ -120,19 +120,19 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  21/01/2024
-                  10:17:46
+                  05/01/2024
+                  07:07:07
                 </Label>
               </TableCell>
               <TableCell>
                 <Label>
-                  Deep Mondal
+                  Racktim Guin
                 </Label>
               </TableCell>
               <TableCell>
                 <Label>
-                  25/01/2024
-                  12:43:38
+                  05/01/2024
+                  12:46:55
                 </Label>
               </TableCell>
               <TableCell>
@@ -171,7 +171,7 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  Raktim Guin
+                  Deep Mondal
                 </Label>
               </TableCell>
               <TableCell>
@@ -210,8 +210,8 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  21/01/2024
-                  10:17:46
+                11/01/2024
+                  16:17:18
                 </Label>
               </TableCell>
               <TableCell>
@@ -221,8 +221,8 @@ const FileUpload = () => {
               </TableCell>
               <TableCell>
                 <Label>
-                  25/01/2024
-                  12:43:38
+                16/01/2024
+                  22:30:48
                 </Label>
               </TableCell>
               <TableCell>
