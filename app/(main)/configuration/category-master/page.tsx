@@ -10,6 +10,8 @@ import {
 } from "@ui5/webcomponents-react";
 
 import bin from "@ui5/webcomponents-icons/dist/delete.js";
+import { CategoryMasterDataset } from "@/utils/data";
+import TableComponent from "@/components/Table";
 
 const categorymaster = () => {
   return (
@@ -25,7 +27,8 @@ const categorymaster = () => {
         </div>
       </div>
       <div>
-        <Table
+        <TableComponent tabledata={CategoryMasterDataset}/>
+        {/* <Table
           className="border border-gray-300"
           // style={{ width: "1150px" }}
           columns={
@@ -179,7 +182,7 @@ const categorymaster = () => {
               </Button>
             </TableCell>
           </TableRow>
-        </Table>
+        </Table> */}
       </div>
     </div>
   );
