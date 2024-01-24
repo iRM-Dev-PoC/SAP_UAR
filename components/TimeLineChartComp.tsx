@@ -2,18 +2,16 @@
 
 import React from "react";
 import { TimelineChart } from "@ui5/webcomponents-react-charts";
-import { AnalyticalCard, AnalyticalCardHeader } from "@ui5/webcomponents-react";
 
 const TimeLineChartComp = () => {
 	return (
-		<div>
-			<AnalyticalCard
-				header={
-					<AnalyticalCardHeader
-						className="pointer-events-none"
-						titleText="Top 10 HoDs with Pending Reviews"></AnalyticalCardHeader>
-				}>
+		<div className="w-full h-full p-3 m-3 bg-white rounded-xl">
+			<h4 className="text-center font-bold mb-3 text-xl ">
+				UAR Review Timeline
+			</h4>
+			<div>
 				<TimelineChart
+					style={{ width: "100%", height: "100%" }}
 					dataset={[
 						{
 							color: "blue",
@@ -126,7 +124,7 @@ const TimeLineChartComp = () => {
 					start={1}
 					totalDuration={31}
 				/>
-			</AnalyticalCard>
+			</div>
 		</div>
 	);
 };

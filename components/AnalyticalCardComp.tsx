@@ -1,4 +1,4 @@
-// 'use client';
+"use client";
 
 import React from "react";
 import { AnalyticalCard, AnalyticalCardHeader } from "@ui5/webcomponents-react";
@@ -7,6 +7,7 @@ import { LineChart } from "@ui5/webcomponents-react-charts";
 const AnalyticalCardComp = () => {
 	return (
 		<AnalyticalCard
+			style={{ width: "100%", height: "100%" }}
 			header={
 				<AnalyticalCardHeader
 					description="Year, 2023"

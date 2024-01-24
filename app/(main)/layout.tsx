@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "@/components/Nav";
 import SideNavbar from "@/components/SideNavbar";
 import { ThemeProvider } from "@ui5/webcomponents-react";
+import "@ui5/webcomponents-icons/dist/AllIcons.js";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
 	return (
@@ -13,7 +14,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 				<div className="sticky left-0 h-full top-[3.46rem]">
 					<SideNavbar />
 				</div>
-				<div className="bg-gray-100 w-full h-[92vh] rounded-xl mr-1 overflow-y-auto">
+				<div className="w-full h-[92vh] rounded-xl mr-1 overflow-y-auto bg-slate-200">
 					<ThemeProvider>{children}</ThemeProvider>
 				</div>
 			</div>
