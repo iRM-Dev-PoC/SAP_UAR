@@ -12,38 +12,37 @@ import {
 import bin from "@ui5/webcomponents-icons/dist/delete.js";
 
 type ColumnsRowsProps = {
-  columnName: string[];
-  rowdata: any[];
+  tabledata: {
+    columndata: any[];
+    rowdata: any[];
+  };
 };
 
-const TableComponent = ({ columnName, rowdata }: ColumnsRowsProps) => {
+const TableComponent = ({ tabledata }: ColumnsRowsProps) => {
+  const columndata = tabledata.columndata;
+  const rowdata = tabledata.rowdata;
+
   return (
     <>
       <Table
         columns={
           <>
-            {columnName.map((element) => {
-              console.log(element);
-              <TableColumn>
-                <Label>{element}</Label>
-              </TableColumn>;
-            })}
-
-            {/* <TableColumn>
-              <Label>Category Name</Label>
-            </TableColumn>
-            <TableColumn>
-              <Label>Category Description</Label>
-            </TableColumn>
-            <TableColumn>
-              <Label>Edit</Label>
-            </TableColumn>
-            <TableColumn>
-              <Label>Delete</Label>
-            </TableColumn> */}
+            {columndata.map((column, index) => (
+              <TableColumn key={index}>
+                <Label>{column}</Label>
+              </TableColumn>
+            ))}
           </>
         }>
-        <TableRow>
+        {rowdata.map((row, rowIndex) => (
+          <TableRow key={rowIndex}>
+            {columndata.map((column, colIndex) => (
+              <TableCell key={colIndex}>{row[column]}</TableCell>
+            ))}
+          </TableRow>
+        ))}
+
+        {/* <TableRow>
           <TableCell>
             <Label>1</Label>
           </TableCell>
@@ -69,7 +68,7 @@ const TableComponent = ({ columnName, rowdata }: ColumnsRowsProps) => {
               Delete
             </Button>
           </TableCell>
-        </TableRow>
+        </TableRow> */}
       </Table>
     </>
   );

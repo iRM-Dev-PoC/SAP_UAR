@@ -8,16 +8,16 @@ type CustomCardProps = {
 };
 
 const CustomCard = ({ title, value }: CustomCardProps) => {
-	let bgcolor: string;
-	if (title === "Revoked Roles") {
-		bgcolor = "revoked";
-	} else if (title === "Pending Reviews") {
-		bgcolor = "pending";
-	} else if (title === "Scoped Roles") {
-		bgcolor = "scoped";
-	} else {
-		bgcolor = "reviewed";
-	}
+	type Title = "Revoked Roles" | "Pending Reviews" | "Scoped Roles";
+
+	const titleToColor: Record<Title, string> = {
+		"Revoked Roles": "revoked",
+		"Pending Reviews": "pending",
+		"Scoped Roles": "scoped",
+	};
+
+	const bgcolor: string = titleToColor[title as Title] || "reviewed";
+
 	return (
 		<div
 			className={`h-[7rem] w-[18rem] rounded-xl p-2 opacity-90 hover:opacity-100 transition-all shadow-lg pending ${bgcolor}`}>
