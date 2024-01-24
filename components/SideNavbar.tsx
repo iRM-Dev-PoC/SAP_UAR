@@ -14,6 +14,7 @@ import upload from "@ui5/webcomponents-icons/dist/upload-to-cloud.js";
 import wrench from "@ui5/webcomponents-icons/dist/wrench.js";
 import equipment from "@ui5/webcomponents-icons/dist/add-equipment.js";
 import employee from "@ui5/webcomponents-icons/dist/add-employee.js";
+import sync from "@ui5/webcomponents-icons/dist/download-from-cloud.js";
 
 const SideNavbar = () => {
 	const handleOnNavigate = (path: string) => {
@@ -43,10 +44,23 @@ const SideNavbar = () => {
 
 				<SideNavigationItem
 					icon={upload}
-					text="Data Upload"
-					onClick={() => {
-						handleOnNavigate("/data-upload");
-					}}></SideNavigationItem>
+					text="Data Ingestion">
+					<SideNavigationSubItem
+						text="Data Upload"
+						icon={upload}
+						onClick={() => {
+							handleOnNavigate("/data-ingestion/data-upload");
+						}}
+					/>
+
+					<SideNavigationSubItem
+						text="Data Sync"
+						icon={sync}
+						onClick={() => {
+							handleOnNavigate("/data-ingestion/data-sync");
+						}}
+					/>
+				</SideNavigationItem>
 
 				<SideNavigationItem
 					icon={wrench}
@@ -58,6 +72,7 @@ const SideNavbar = () => {
 							handleOnNavigate("/configuration/category-master");
 						}}
 					/>
+
 					<SideNavigationSubItem
 						text="Map Role & Category"
 						icon={employee}

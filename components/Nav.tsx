@@ -1,74 +1,44 @@
 "use client";
 
 import React from "react";
-import {
-  ShellBar,
-  StandardListItem,
-  Avatar,
-  Icon,
-  Input,
-  ShellBarItem,
-  Button,
-} from "@ui5/webcomponents-react";
+import { ShellBar, Avatar } from "@ui5/webcomponents-react";
 import Image from "next/image";
 
-
+import img from "@/public/irm.png";
+import avater from "@/public/user.png";
 
 const NavBar = () => {
 	return (
 		<div>
 			<ShellBar
+				onProfileClick={() => {
+					console.log("Profile clicked");
+				}}
 				logo={
 					<Image
-						alt="SAP Logo"
-						src="https://sap.github.io/ui5-webcomponents/assets/images/sap-logo-svg.svg"
+						alt="IRM Logo"
+						src={img}
 						height={32}
 						width={32}
 					/>
 				}
-				menuItems={
-					<>
-						<StandardListItem data-key="1">Menu Item 1</StandardListItem>
-						<StandardListItem data-key="2">Menu Item 2</StandardListItem>
-						<StandardListItem data-key="3">Menu Item 3</StandardListItem>
-					</>
-				}
 				notificationsCount="10"
-				primaryTitle="Shell Bar"
 				profile={
-					<Avatar>
+					<Avatar
+						onClick={() => {
+							console.log("Avatar clicked");
+						}}>
 						<Image
-							src="https://sap.github.io/ui5-webcomponents-react/assets/Person-e8B6nScF.png"
+							src={avater}
 							alt="Person"
 							height={32}
 							width={32}
 						/>
 					</Avatar>
 				}
-				searchField={
-					<Input
-						icon={
-							<Icon
-								interactive
-								name="search"
-							/>
-						}
-						showClearIcon
-					/>
-				}
-				secondaryTitle="Fiori 3 Shell Bar"
-				showCoPilot
-				showNotifications
-				showProductSwitch>
-				<ShellBarItem
-					count="3"
-					icon="add"
-					text="ShellBarItem"
-				/>
-			</ShellBar>
+				showNotifications></ShellBar>
 		</div>
 	);
 };
-
 
 export default NavBar;

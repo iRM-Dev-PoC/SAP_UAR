@@ -6,22 +6,6 @@ import { useRouter } from "next/navigation";
 import { users } from "@/utils/data";
 
 const SignIn = () => {
-	// const router = useRouter();
-	// const ref = useRef<HTMLFormElement>(null);
-
-	// const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-	// 	e.preventDefault();
-	// 	const { email, password } = e.currentTarget;
-	// 	const user = users.find((user) => user.email === email.value);
-
-	// 	if (user && user.password === password.value) {
-	// 		window.localStorage.setItem("isLogedin", "True");
-	// 		router.push("/dashboard");
-	// 	} else {
-	// 		ref.current?.reset();
-	// 	}
-	// };
-
 	const router = useRouter();
 	const ref = useRef<HTMLFormElement>(null);
 
