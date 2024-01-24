@@ -1,6 +1,5 @@
-
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Input,
   Icon,
@@ -14,47 +13,147 @@ import {
   Label,
   CheckBox,
   DatePicker,
+  Modals,
+  Bar,
 } from "@ui5/webcomponents-react";
 import bin from "@ui5/webcomponents-icons/dist/delete.js";
+import UarModal from "@/components/modal/Uar-modal";
+import HodDetails from "@/components/HodDetails";
 
 const UarReview = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  useEffect(() => {
+    setModalOpen(false);
+  }, [isModalOpen]);
+
+  const showDialog = Modals.useShowDialog();
 
   function OpenModal() {
-    if (isModalOpen) {
-      setModalOpen(false);
-    } else {
-      setModalOpen(true);
-    }
-
+    setModalOpen(!isModalOpen);
     console.log(isModalOpen);
   }
 
   return (
-    <div className="w-[82vw] m-1">
-      <div className="bg-white h-10">
-        <b>UAR Review</b>
+    <div className="w-[82vw] m-1 p-3">
+      {isModalOpen ? <UarModal /> : null}
+      <div className="bg-white h-10 p-3 rounded-xl text-center">
+        <b className="">UAR Review</b>
       </div>
-      <div className="flex bg-white justify-between">
+      <HodDetails />
+      <div className="bg-white h-55 p-3 rounded-xl">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <b>Manager Name</b>
+              </td>
+              <td>
+                <Input icon={<Icon name="search" />} />
+              </td>
+              <td></td>
+              <td>
+                <b>Action</b>
+              </td>
+              <td>
+                <Select>
+                  <Option>REVOKE</Option>
+                  <Option>RETAIN</Option>
+                </Select>
+              </td>
+              <td></td>
+              <td>
+                <b>Deemed Inappropriate From</b>{" "}
+              </td>
+              <td>
+                <DatePicker formatPattern="dd/MM/yyyy" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>User Full Name </b>
+              </td>
+              <td>
+                <Input icon={<Icon name="search" />} />
+              </td>
+              <td></td>
+              <td>
+                <b>Reassign Email Address</b>
+              </td>
+              <td>
+                <Input icon={<Icon name="search" />} />
+              </td>
+              <td></td>
+              <td>
+                <b>Is Transaction Processed-Valid till Now? </b>
+              </td>
+              <td>
+                <Select>
+                  <Option>Yes</Option>
+                  <Option>No</Option>
+                </Select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>Access Privilege Name</b>{" "}
+              </td>
+              <td>
+                <Input icon={<Icon name="search" />} />
+              </td>
+              <td> </td>
+              <td></td>
+              <td></td> <td></td>
+              <td>
+                <b>Comments</b>{" "}
+              </td>
+              <td>
+                <Input />
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <Button icon="search" className="bg-gray-200">
+                  Search
+                </Button>
+                &nbsp;
+                <Button icon="update" className="bg-slate-300">
+                  Update
+                </Button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div className="flex bg-white justify-between p-3 rounded-xl">
         <div>
           <Input icon={<Icon name="search" />} />
         </div>
         <div>
           <Select>
-            <Option>Option 1</Option>
-            <Option>Option 2</Option>
-            <Option>Option 3</Option>
-            <Option>Option 4</Option>
-            <Option>Option 5</Option>
+            <Option>Deep Mondal</Option>
+            <Option>Raktim Guin</Option>
+            <Option>Suman Mondal</Option>
+            <Option>Riju Das</Option>
+            <Option>Suman Ghorai</Option>
+            <Option>Prity Singh</Option>
           </Select>
         </div>
       </div>
-      <div className="w-full overflow-x-auto ">
+
+      <div className="w-full overflow-x-auto p-1 rounded-xl">
         <Table
           columns={
             <>
               <TableColumn>
-                <Label>Select</Label>
+                <CheckBox />
               </TableColumn>
               <TableColumn>
                 <Label>Emp Number</Label>
@@ -107,7 +206,7 @@ const UarReview = () => {
             <TableCell>
               <CheckBox />
             </TableCell>
-            <TableCell onClick={OpenModal}>
+            <TableCell onClick={() => setModalOpen(!isModalOpen)}>
               <Label>2144729</Label>
             </TableCell>
             <TableCell>
@@ -523,4 +622,3 @@ const UarReview = () => {
 };
 
 export default UarReview;
-
