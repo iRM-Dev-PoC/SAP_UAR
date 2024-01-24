@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { Popover, Button } from "@ui5/webcomponents-react";
 import { ShellBar, Avatar } from "@ui5/webcomponents-react";
 import Image from "next/image";
 
@@ -8,12 +9,15 @@ import img from "@/public/irm.png";
 import avater from "@/public/user.png";
 
 const NavBar = () => {
+	const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
+	const handlePopoverClick = () => {
+		setIsPopoverOpen((prevState) => !prevState);
+	};
 	return (
 		<div>
 			<ShellBar
-				onProfileClick={() => {
-					console.log("Profile clicked");
-				}}
+				onProfileClick={handlePopoverClick}
 				logo={
 					<Image
 						alt="IRM Logo"
@@ -24,10 +28,7 @@ const NavBar = () => {
 				}
 				notificationsCount="10"
 				profile={
-					<Avatar
-						onClick={() => {
-							console.log("Avatar clicked");
-						}}>
+					<Avatar id="openPopoverBtn">
 						<Image
 							src={avater}
 							alt="Person"
@@ -37,6 +38,28 @@ const NavBar = () => {
 					</Avatar>
 				}
 				showNotifications></ShellBar>
+
+			<div>
+				<Popover
+					open={isPopoverOpen}
+					placementType="Bottom"
+					onBeforeClose={() => setIsPopoverOpen(false)}
+					className="footerPartNoPadding"
+					headerText="Are you sure you want to logout?"
+					horizontalAlign="Center"
+					opener="openPopoverBtn"
+					verticalAlign="Center">
+					<div className="flex justify-center items-center gap-x-3">
+						<button className="bg-red-500 text-white text-sm px-5 py-3 rounded-full outline-none hover:scale-110 transition border border-black/10">
+							Logout
+						</button>
+
+						<button className="bg-slate-400 text-white text-sm px-5 py-3 rounded-full outline-none hover:scale-110 transition border border-black/10">
+							Cancel
+						</button>
+					</div>
+				</Popover>
+			</div>
 		</div>
 	);
 };
