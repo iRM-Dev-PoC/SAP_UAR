@@ -3,7 +3,7 @@ import { Badge } from "@ui5/webcomponents-react";
 
 const HodDetails = () => {
   return (
-    <div className="bg-white h-30 rounded-xl flex p-3">
+    <div className="bg-white h-30  flex p-3">
       <div>
         <div>
           HOD/Reviewer : <b>Raktim Guin</b>{" "}
