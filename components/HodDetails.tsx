@@ -1,4 +1,5 @@
 import React from "react";
+import { Badge } from "@ui5/webcomponents-react";
 
 const HodDetails = () => {
   return (
@@ -14,7 +15,7 @@ const HodDetails = () => {
           Service Line : <b>Shared Services</b>
         </div>
         <div>
-          Records To be Viewed : <b>139</b>
+          Records To be Viewed : <Badge>139</Badge>
         </div>
       </div>
     </div>
