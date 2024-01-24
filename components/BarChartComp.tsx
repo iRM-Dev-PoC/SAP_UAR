@@ -4,13 +4,11 @@ import { AnalyticalCard, AnalyticalCardHeader } from "@ui5/webcomponents-react";
 
 const BarChartComp = () => {
 	return (
-		<div>
-			<AnalyticalCard
-				header={
-					<AnalyticalCardHeader
-						className="pointer-events-none"
-						titleText="Top 10 HoDs with Pending Reviews"></AnalyticalCardHeader>
-				}>
+		<div className="bg-white rounded-xl">
+			<h4 className="text-center pt-3 font-bold mb-1 text-xl">
+				Top 10 HoDs With Pending Reviews
+			</h4>
+			<div className="mt-3">
 				<BarChart
 					dataset={[
 						{
@@ -77,7 +75,7 @@ const BarChartComp = () => {
 					]}
 					noLegend
 				/>
-			</AnalyticalCard>
+			</div>
 		</div>
 	);
 };

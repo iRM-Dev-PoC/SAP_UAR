@@ -4,20 +4,18 @@ import React from "react";
 import { useRouter } from "next/navigation";
 
 import {
-  SideNavigation,
-  SideNavigationItem,
-  SideNavigationSubItem,
+	SideNavigation,
+	SideNavigationItem,
+	SideNavigationSubItem,
 } from "@ui5/webcomponents-react";
 import speed from "@ui5/webcomponents-icons/dist/performance.js";
 import review from "@ui5/webcomponents-icons/dist/manager-insight.js";
 import upload from "@ui5/webcomponents-icons/dist/upload-to-cloud.js";
-import role from "@ui5/webcomponents-icons/dist/role.js";
 import wrench from "@ui5/webcomponents-icons/dist/wrench.js";
 import equipment from "@ui5/webcomponents-icons/dist/add-equipment.js";
 import employee from "@ui5/webcomponents-icons/dist/add-employee.js";
 
 const SideNavbar = () => {
-
 	const handleOnNavigate = (path: string) => {
 		router.push(path);
 	};
@@ -51,13 +49,6 @@ const SideNavbar = () => {
 					}}></SideNavigationItem>
 
 				<SideNavigationItem
-					icon={role}
-					text="Role"
-					onClick={() => {
-						handleOnNavigate("/role");
-					}}></SideNavigationItem>
-
-				<SideNavigationItem
 					icon={wrench}
 					text="Configration">
 					<SideNavigationSubItem
@@ -78,7 +69,6 @@ const SideNavbar = () => {
 			</SideNavigation>
 		</div>
 	);
-
 };
 
 export default SideNavbar;

@@ -1,0 +1,15 @@
+.pending {
+    background-image: linear-gradient(to right, #e7e96b 0%, #f9d423 100%);
+}
+
+.reviewed {
+    background-image: linear-gradient(to right, #60a2ce 0%, #695f8d 100%);
+}
+
+.revoked {
+    background-image: linear-gradient(to top, #558cb7 0%, #83c6bc 100%);
+}
+
+.scoped {
+    background-image: linear-gradient(to left, #0fd850 0%, #63e779 100%);
+}
