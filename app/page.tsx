@@ -8,6 +8,7 @@ export default function Page() {
 
 	useEffect(() => {
 		const isLoggedin = window.localStorage.getItem("isLoggedIn");
+		
 
 		if (isLoggedin === null || isLoggedin === "undefined") {
 			router.push("/sign-in");
