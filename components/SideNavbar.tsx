@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, {  } from "react";
 import { useRouter } from "next/navigation";
 
 import {
-	SideNavigation,
-	SideNavigationItem,
-	SideNavigationSubItem,
+  SideNavigation,
+  SideNavigationItem,
+  SideNavigationSubItem,
 } from "@ui5/webcomponents-react";
 import speed from "@ui5/webcomponents-icons/dist/performance.js";
 import review from "@ui5/webcomponents-icons/dist/manager-insight.js";
@@ -15,75 +15,71 @@ import wrench from "@ui5/webcomponents-icons/dist/wrench.js";
 import equipment from "@ui5/webcomponents-icons/dist/add-equipment.js";
 import employee from "@ui5/webcomponents-icons/dist/add-employee.js";
 import sync from "@ui5/webcomponents-icons/dist/download-from-cloud.js";
+type sidenavprop={isCollapse:boolean};
 
-const SideNavbar = () => {
-	const handleOnNavigate = (path: string) => {
-		router.push(path);
-	};
+const SideNavbar = ({isCollapse}:sidenavprop) => {
+  const handleOnNavigate = (path: string) => {
+    router.push(path);
+  };
 
-	const router = useRouter();
+  const router = useRouter();
+  return (
+    <div className="sticky top-3 left-0">
+      <SideNavigation className="h-[92vh]" collapsed={isCollapse}>
+        <SideNavigationItem
+          icon={speed}
+          text="Dashboard"
+          onClick={() => {
+            handleOnNavigate("/dashboard");
+          }}
+        />
 
-	return (
-		<div className="sticky top-3 left-0">
-			<SideNavigation className="h-[92vh]">
-				<SideNavigationItem
-					icon={speed}
-					text="Dashboard"
-					onClick={() => {
-						handleOnNavigate("/dashboard");
-					}}
-				/>
+        <SideNavigationItem
+          icon={review}
+          text="UAR Review"
+          onClick={() => {
+            handleOnNavigate("/uar-review");
+          }}
+        />
 
-				<SideNavigationItem
-					icon={review}
-					text="UAR Review"
-					onClick={() => {
-						handleOnNavigate("/uar-review");
-					}}
-				/>
+        <SideNavigationItem icon={upload} text="Data Ingestion">
+          <SideNavigationSubItem
+            text="Data Upload"
+            icon={upload}
+            onClick={() => {
+              handleOnNavigate("/data-ingestion/data-upload");
+            }}
+          />
 
-				<SideNavigationItem
-					icon={upload}
-					text="Data Ingestion">
-					<SideNavigationSubItem
-						text="Data Upload"
-						icon={upload}
-						onClick={() => {
-							handleOnNavigate("/data-ingestion/data-upload");
-						}}
-					/>
+          <SideNavigationSubItem
+            text="Data Sync"
+            icon={sync}
+            onClick={() => {
+              handleOnNavigate("/data-ingestion/data-sync");
+            }}
+          />
+        </SideNavigationItem>
 
-					<SideNavigationSubItem
-						text="Data Sync"
-						icon={sync}
-						onClick={() => {
-							handleOnNavigate("/data-ingestion/data-sync");
-						}}
-					/>
-				</SideNavigationItem>
+        <SideNavigationItem icon={wrench} text="Configration">
+          <SideNavigationSubItem
+            text="Category Master"
+            icon={equipment}
+            onClick={() => {
+              handleOnNavigate("/configuration/category-master");
+            }}
+          />
 
-				<SideNavigationItem
-					icon={wrench}
-					text="Configration">
-					<SideNavigationSubItem
-						text="Category Master"
-						icon={equipment}
-						onClick={() => {
-							handleOnNavigate("/configuration/category-master");
-						}}
-					/>
-
-					<SideNavigationSubItem
-						text="Map Role & Category"
-						icon={employee}
-						onClick={() => {
-							handleOnNavigate("/configuration/map-role-category");
-						}}
-					/>
-				</SideNavigationItem>
-			</SideNavigation>
-		</div>
-	);
+          <SideNavigationSubItem
+            text="Map Role & Category"
+            icon={employee}
+            onClick={() => {
+              handleOnNavigate("/configuration/map-role-category");
+            }}
+          />
+        </SideNavigationItem>
+      </SideNavigation>
+    </div>
+  );
 };
 
 export default SideNavbar;
