@@ -43,7 +43,11 @@ const UarReview = () => {
   const showDialog = Modals.useShowDialog();
 
   function OpenModal() {
-    setModalOpen((isModalOpen) => !isModalOpen);
+    if (isModalOpen) {
+      setModalOpen(false);
+    } else {
+      setModalOpen(true);
+    }
   }
 
   return (
@@ -245,7 +249,7 @@ const UarReview = () => {
                 </TableCell>
               </>
             ) : null}
-            <TableCell onClick={() => setModalOpen(!isModalOpen)}>
+            <TableCell onClick={OpenModal}>
               <Label>2144729</Label>
             </TableCell>
             <TableCell>
