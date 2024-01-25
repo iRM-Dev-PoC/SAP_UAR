@@ -5,8 +5,9 @@ import {FileCheck2} from 'lucide-react';
 
 const FileUpload = () => {
   return (
+    <div className='flex justify-evenly'>
     <div className='bg-slate-200 h-[90vh] p-2 overflow-hidden '>
-      <h1 className='bg-white font font-medium p-2 border rounded-t-lg border-gray-400'>Data Upload</h1>
+      <h1 className='bg-white font font-medium p-2 border rounded-t-lg border-gray-400'>Data Details</h1>
       <div className='bg-white p-4 border border-gray-400 flex gap-4 rounded-b-lg'>
           <Table className='h-[55vh] border border-gray-400 rounded-md shadow-md'
             accessibleName=""
@@ -237,20 +238,24 @@ const FileUpload = () => {
               </TableCell>
             </TableRow>            
           </Table>
-          <div className='h-[50vh] w-[20vw] border border-slate-400 rounded-lg p-8 shadow-md'>
-              <div className='bg-white h-90px w-90vw p-5 mt-20'>
-                <FileUploader placeholder="Choose a file for upload..."
-                  accept=".xlsx, .csv"
-                  // onChange={function _a(){}}
-                />
-                <Button className='border-2 border-blue-500 hover:opacity-75 ml-16'>
-                    Upload
-                </Button>
-              </div>
-          </div>
           
       </div>
     </div>
+    <div className='pt-2 pr-1'>
+      <h1 className='bg-white font font-medium p-2 border rounded-t-lg border-gray-400'>File Upload</h1>
+      <div className='h-[45vh] w-[20vw] bg-white border border-slate-400 rounded-b-lg p-8 shadow-md'>
+          <div className='p-5 mt-16'>
+            <FileUploader placeholder="Choose a file for upload..."
+              accept=".xlsx, .csv"
+              // onChange={function _a(){}}
+            />
+            <Button className='border-2 border-blue-500 hover:opacity-75 ml-16 mt-4'>
+                Upload
+            </Button>
+          </div>
+      </div>
+    </div>
+  </div>
   )
 }
 
