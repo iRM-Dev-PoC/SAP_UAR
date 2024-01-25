@@ -14,7 +14,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 				<NavigationBar callback={setIsCollapse} />
 			</div>
 			<div className="flex">
-				<div className="sticky left-0 h-full top-[3.46rem]">
+				<div className="sticky  pl-1 left-0 h-full top-[3.46rem]">
 					<SideNavbar isCollapse={isCollapseSidenav} />
 				</div>
 				<div className="w-full h-[92vh] rounded-xl mr-4 ml-2 mb-5 overflow-y-auto bg-slate-100">
