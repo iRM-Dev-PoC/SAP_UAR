@@ -1,17 +1,17 @@
 "use client";
-import React, { useRef, useState } from "react";
-import NavBar from "@/components/Nav";
+import React, { useState } from "react";
 import SideNavbar from "@/components/SideNavbar";
 import { ThemeProvider } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/AllIcons.js";
+import NavigationBar from "@/components/NavigationBar";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
 	const [isCollapseSidenav, setIsCollapse] = useState(false);
 
 	return (
-		<div className="bg-gray-400">
+		<div className="bg-gray-200">
 			<div className="mb-1 mr-2 rounded-xl sticky top-1 z-[999999]">
-				<NavBar callback={setIsCollapse} />
+				<NavigationBar callback={setIsCollapse} />
 			</div>
 			<div className="flex">
 				<div className="sticky left-0 h-full top-[3.46rem]">

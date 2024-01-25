@@ -31,7 +31,7 @@ const DashBoard = () => {
 				<h2 className="text-center text-black font-semibold text-2xl mb-2 mt-1">{`Welcome ${userName}!`}</h2>
 			</div>
 
-			<div className="flex justify-start gap-x-7 pr-0 mr-7 ml-3">
+			<div className="flex justify-between gap-x-7 pr-0 mr-7 ml-3">
 				<CustomCard
 					title={dasdhboardCardData[0].title}
 					value={dasdhboardCardData[0].value}
