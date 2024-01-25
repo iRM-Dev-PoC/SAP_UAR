@@ -1,13 +1,12 @@
 "use client";
 
-
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import {
-  SideNavigation,
-  SideNavigationItem,
-  SideNavigationSubItem,
+	SideNavigation,
+	SideNavigationItem,
+	SideNavigationSubItem,
 } from "@ui5/webcomponents-react";
 import speed from "@ui5/webcomponents-icons/dist/performance.js";
 import review from "@ui5/webcomponents-icons/dist/manager-insight.js";
@@ -16,9 +15,9 @@ import wrench from "@ui5/webcomponents-icons/dist/wrench.js";
 import equipment from "@ui5/webcomponents-icons/dist/add-equipment.js";
 import employee from "@ui5/webcomponents-icons/dist/add-employee.js";
 import sync from "@ui5/webcomponents-icons/dist/download-from-cloud.js";
-type sidenavprop={isCollapse:boolean};
+type sidenavprop = { isCollapse: boolean };
 
-const SideNavbar = ({isCollapse}:sidenavprop) => {
+const SideNavbar = ({ isCollapse }: sidenavprop) => {
 	const [role, setRole] = useState("user");
 	const router = useRouter();
 	const handleOnNavigate = (path: string) => {
@@ -46,7 +45,9 @@ const SideNavbar = ({isCollapse}:sidenavprop) => {
 
 	return (
 		<div className="sticky top-3 left-0 ml-2">
-			<SideNavigation className="h-[92vh]" collapsed={isCollapse}>
+			<SideNavigation
+				className="h-[92vh]"
+				collapsed={isCollapse}>
 				{!isAdmin && (
 					<SideNavigationItem
 						icon={review}

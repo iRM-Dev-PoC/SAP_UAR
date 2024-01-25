@@ -20,7 +20,11 @@ const SignIn = () => {
 			if (typeof window !== "undefined") {
 				window.localStorage.setItem("isLoggedIn", "true");
 				window.localStorage.setItem("user", JSON.stringify(user));
-				router.push("/dashboard");
+				if (user.role === "admin") {
+					router.push("/dashboard");
+				} else if (user.role === "user") {
+					router.push("/uar-review");
+				}
 			}
 		} else {
 			ref.current?.reset();
