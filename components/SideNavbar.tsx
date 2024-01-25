@@ -44,7 +44,7 @@ const SideNavbar = ({ isCollapse }: sidenavprop) => {
 	const isAdmin = role === "admin";
 
 	return (
-		<div className="sticky top-3 left-0 ml-2">
+		<div className="sticky top-3 left-0">
 			<SideNavigation
 				className="h-[92vh]"
 				collapsed={isCollapse}>
