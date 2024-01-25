@@ -30,7 +30,6 @@ const UarReview = () => {
 
 	function OpenModal() {
 		setModalOpen(!isModalOpen);
-		console.log(isModalOpen);
 	}
 
 	return (
@@ -42,7 +41,7 @@ const UarReview = () => {
 			<div className="border border-slate-400">
 				<HodDetails />
 			</div>
-			
+
 			<div className="bg-white border border-slate-400 h-55 p-3 rounded-b-lg">
 				<table>
 					<tbody>
@@ -156,17 +155,15 @@ const UarReview = () => {
 			</div>
 
 			<div className="w-full overflow-x-auto p-1 rounded-lg mt-2">
-				<Table className="rounded-lg border border-slate-400"
+				<Table
+					className="rounded-lg border border-slate-400"
 					columns={
 						<>
 							<TableColumn>
 								<CheckBox />
 							</TableColumn>
 							<TableColumn>
-								<Label>
-									Emp 
-									Number
-								</Label>
+								<Label>Emp Number</Label>
 							</TableColumn>
 							<TableColumn>
 								<Label>Full Name</Label>

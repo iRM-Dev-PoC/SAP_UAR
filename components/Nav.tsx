@@ -1,22 +1,19 @@
 "use client";
 
-import React, { useState, createContext } from "react";
-import { Popover, Button, Icon } from "@ui5/webcomponents-react";
-import { ShellBar, Avatar } from "@ui5/webcomponents-react";
-import Image from "next/image";
-
-import img from "@/public/irm.png";
 import avater from "@/public/user.png";
+import React, { useState } from "react";
 import { LucideMenu } from "lucide-react";
 import SideNavbar from "./SideNavbar";
+import logout from "@/public/logout.png";
 
 type navbarprop = { callback: any };
 const NavBar = ({ callback }: navbarprop) => {
-  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  	const router = useRouter();
 
-  const handlePopoverClick = () => {
-    setIsPopoverOpen((prevState) => !prevState);
-  };
+	const handleLogOut = () => {
+		window.localStorage.clear();
+		router.push("/sign-in");
+	};
 
   const [isCollapseSidebar, setCollapseSidebar] = useState(true);
   const handleNavMenuButtonclick = () => {
@@ -25,44 +22,32 @@ const NavBar = ({ callback }: navbarprop) => {
   };
 
   return (
-    <div>
+    <div className="mb-2 ml-2 mr-2 rounded-xl">
       <ShellBar
         startButton={
           <Button onClick={handleNavMenuButtonclick}>
             <LucideMenu />
           </Button>
         }
-        onProfileClick={handlePopoverClick}
+        onProfileClick={handleLogOut}
+				onLogoClick={() => router.push("/dashboard")}
         logo={<Image alt="IRM Logo" src={img} height={32} width={32} />}
         notificationsCount="10"
-        profile={
-          <Avatar id="openPopoverBtn">
-            <Image src={avater} alt="Person" height={32} width={32} />
-          </Avatar>
-        }
-        showNotifications></ShellBar>
-
-      <div>
-        <Popover
-          open={isPopoverOpen}
-          placementType="Bottom"
-          onBeforeClose={() => setIsPopoverOpen(false)}
-          className="footerPartNoPadding"
-          headerText="Are you sure you want to logout?"
-          horizontalAlign="Center"
-          opener="openPopoverBtn"
-          verticalAlign="Center">
-          <div className="flex justify-center items-center gap-x-3">
-            <button className="bg-red-500 text-white text-sm px-5 py-3 rounded-full outline-none hover:scale-110 transition border border-black/10">
-              Logout
-            </button>
-
-            <button className="bg-slate-400 text-white text-sm px-5 py-3 rounded-full outline-none hover:scale-110 transition border border-black/10">
-              Cancel
-            </button>
-          </div>
-        </Popover>
-      </div>
+        				profile={
+					<Avatar>
+						<Image
+							src={logout}
+							alt="Person"
+							height={32}
+							width={32}
+						/>
+					</Avatar>
+				}
+        showNotifications
+        style={{
+					borderRadius: "5px !important",
+				}}
+				suppressHydrationWarning></ShellBar>
     </div>
   );
 };

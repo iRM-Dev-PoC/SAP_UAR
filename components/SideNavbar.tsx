@@ -1,6 +1,7 @@
 "use client";
 
-import React, {  } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import {
@@ -18,68 +19,105 @@ import sync from "@ui5/webcomponents-icons/dist/download-from-cloud.js";
 type sidenavprop={isCollapse:boolean};
 
 const SideNavbar = ({isCollapse}:sidenavprop) => {
-  const handleOnNavigate = (path: string) => {
-    router.push(path);
-  };
+	const [role, setRole] = useState("user");
+	const router = useRouter();
+	const handleOnNavigate = (path: string) => {
+		router.push(path);
+	};
 
-  const router = useRouter();
-  return (
-    <div className="sticky top-3 left-0">
-      <SideNavigation className="h-[92vh]" collapsed={isCollapse}>
-        <SideNavigationItem
-          icon={speed}
-          text="Dashboard"
-          onClick={() => {
-            handleOnNavigate("/dashboard");
-          }}
-        />
+	useEffect(() => {
+		if (typeof window === "undefined") {
+			return;
+		}
 
-        <SideNavigationItem
-          icon={review}
-          text="UAR Review"
-          onClick={() => {
-            handleOnNavigate("/uar-review");
-          }}
-        />
+		try {
+			const storedUser = window.localStorage.getItem("user");
+			if (storedUser) {
+				const currentUser = JSON.parse(storedUser);
+				const userRole: string = currentUser.role;
+				setRole(userRole);
+			}
+		} catch (error) {
+			console.error("Error parsing user data:", error);
+		}
+	}, []);
 
-        <SideNavigationItem icon={upload} text="Data Ingestion">
-          <SideNavigationSubItem
-            text="Data Upload"
-            icon={upload}
-            onClick={() => {
-              handleOnNavigate("/data-ingestion/data-upload");
-            }}
-          />
+	const isAdmin = role === "admin";
 
-          <SideNavigationSubItem
-            text="Data Sync"
-            icon={sync}
-            onClick={() => {
-              handleOnNavigate("/data-ingestion/data-sync");
-            }}
-          />
-        </SideNavigationItem>
+	return (
+		<div className="sticky top-3 left-0 ml-2">
+			<SideNavigation className="h-[92vh]" collapsed={isCollapse}>
+				{!isAdmin && (
+					<SideNavigationItem
+						icon={review}
+						text="UAR Review"
+						onClick={() => {
+							handleOnNavigate("/uar-review");
+						}}
+					/>
+				)}
+				{isAdmin && (
+					<>
+						<SideNavigationItem
+							icon={speed}
+							text="Dashboard"
+							onClick={() => {
+								handleOnNavigate("/dashboard");
+							}}
+						/>
 
-        <SideNavigationItem icon={wrench} text="Configration">
-          <SideNavigationSubItem
-            text="Category Master"
-            icon={equipment}
-            onClick={() => {
-              handleOnNavigate("/configuration/category-master");
-            }}
-          />
+						<SideNavigationItem
+							icon={review}
+							text="UAR Review"
+							onClick={() => {
+								handleOnNavigate("/uar-review");
+							}}
+						/>
 
-          <SideNavigationSubItem
-            text="Map Role & Category"
-            icon={employee}
-            onClick={() => {
-              handleOnNavigate("/configuration/map-role-category");
-            }}
-          />
-        </SideNavigationItem>
-      </SideNavigation>
-    </div>
-  );
+						<SideNavigationItem
+							icon={upload}
+							text="Data Ingestion">
+							<SideNavigationSubItem
+								text="Data Upload"
+								icon={upload}
+								onClick={() => {
+									handleOnNavigate("/data-ingestion/data-upload");
+								}}
+							/>
+
+							<SideNavigationSubItem
+								text="Data Sync"
+								icon={sync}
+								onClick={() => {
+									handleOnNavigate("/data-ingestion/data-sync");
+								}}
+							/>
+						</SideNavigationItem>
+
+						<SideNavigationItem
+							icon={wrench}
+							text="Configration">
+							<SideNavigationSubItem
+								text="Category Master"
+								icon={equipment}
+								onClick={() => {
+									handleOnNavigate("/configuration/category-master");
+								}}
+							/>
+
+							<SideNavigationSubItem
+								text="Map Role & Category"
+								icon={employee}
+								onClick={() => {
+									handleOnNavigate("/configuration/map-role-category");
+								}}
+							/>
+						</SideNavigationItem>
+					</>
+				)}
+			</SideNavigation>
+		</div>
+	);
 };
 
 export default SideNavbar;

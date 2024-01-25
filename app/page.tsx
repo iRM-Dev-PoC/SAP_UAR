@@ -7,15 +7,13 @@ export default function Page() {
 	const router = useRouter();
 
 	useEffect(() => {
-		const isLoggedin = window.localStorage.getItem("isLogedin");
+		const isLoggedin = window.localStorage.getItem("isLoggedIn");
 
-		console.log("isLoggedin", isLoggedin);
-
-		if (isLoggedin === null || isLoggedin === "False") {
+		if (isLoggedin === null || isLoggedin === "undefined") {
 			router.push("/sign-in");
 		}
-		
-		if (isLoggedin && isLoggedin === "True") {
+
+		if (isLoggedin && isLoggedin === "true") {
 			router.push("/dashboard");
 		}
 	}, [router]);
