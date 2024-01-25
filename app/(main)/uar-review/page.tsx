@@ -156,10 +156,11 @@ const UarReview = () => {
       <br />
       <div className="flex w-auto bg-white border border-slate-400 justify-between p-3 rounded-lg">
         <div>
-          <Input icon={<Icon name="search" />} />
+          <Input placeholder="Enter text" icon={<Icon name="search" />} />
         </div>
         <div>
           <Select>
+            <Option selected>Select HoD</Option>
             <Option>Deep Mondal</Option>
             <Option>Raktim Guin</Option>
             <Option>Suman Mondal</Option>
@@ -250,7 +251,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>2144729</Label>
+              <Label className="cursor-pointer text-blue-400">2144729</Label>
             </TableCell>
             <TableCell>
               <Label>Mr Riju Das</Label>
@@ -319,7 +320,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>21342729</Label>
+              <Label className="cursor-pointer text-blue-400">21342729</Label>
             </TableCell>
             <TableCell>
               <Label>Mr Raktim </Label>
@@ -388,7 +389,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>2575729</Label>
+              <Label className="cursor-pointer text-blue-400">2575729</Label>
             </TableCell>
             <TableCell>
               <Label>Mr. Suman</Label>
@@ -457,7 +458,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>2188829</Label>
+              <Label className="cursor-pointer text-blue-400">2188829</Label>
             </TableCell>
             <TableCell>
               <Label>Mrs. Prity</Label>
@@ -526,7 +527,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>294229</Label>
+              <Label className="cursor-pointer text-blue-400">294229</Label>
             </TableCell>
             <TableCell>
               <Label>Mr Dip</Label>
@@ -595,7 +596,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>28392429</Label>
+              <Label className="cursor-pointer text-blue-400">28392429</Label>
             </TableCell>
             <TableCell>
               <Label>Mr Ram</Label>
@@ -664,7 +665,7 @@ const UarReview = () => {
               </>
             ) : null}
             <TableCell onClick={OpenModal}>
-              <Label>202348</Label>
+              <Label className="cursor-pointer text-blue-400">202348</Label>
             </TableCell>
             <TableCell>
               <Label>Mr Sam</Label>
