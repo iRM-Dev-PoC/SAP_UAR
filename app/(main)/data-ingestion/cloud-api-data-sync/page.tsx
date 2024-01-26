@@ -1,5 +1,5 @@
 import React from "react";
-import FileSync from "@/components/FileSync";
+import FileSync from "@/components/CloudApiDataSync";
 
 const page = () => {
 	return (

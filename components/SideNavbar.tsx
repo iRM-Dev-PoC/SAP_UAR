@@ -15,6 +15,7 @@ import wrench from "@ui5/webcomponents-icons/dist/wrench.js";
 import equipment from "@ui5/webcomponents-icons/dist/add-equipment.js";
 import employee from "@ui5/webcomponents-icons/dist/add-employee.js";
 import sync from "@ui5/webcomponents-icons/dist/download-from-cloud.js";
+import syncon from "@ui5/webcomponents-icons/dist/synchronize.js";
 type sidenavprop = { isCollapse: boolean };
 
 const SideNavbar = ({ isCollapse }: sidenavprop) => {
@@ -87,12 +88,20 @@ const SideNavbar = ({ isCollapse }: sidenavprop) => {
 							/>
 
 							<SideNavigationSubItem
-								text="Data Sync"
+								text="Cloud Api Data Sync"
 								icon={sync}
 								onClick={() => {
-									handleOnNavigate("/data-ingestion/data-sync");
+									handleOnNavigate("/data-ingestion/cloud-api-data-sync");
 								}}
 							/>
+
+							<SideNavigationSubItem
+								text="On-Prem-Sync"
+								icon={syncon}
+								onClick={() => {
+									handleOnNavigate("/data-ingestion/on-premsync");
+								}}
+								/>
 						</SideNavigationItem>
 
 						<SideNavigationItem
