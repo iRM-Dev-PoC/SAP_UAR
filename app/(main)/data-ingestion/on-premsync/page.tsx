@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Label, Table, TableCell, TableColumn, TableRow, Panel, ComboBox, ComboBoxItem } from '@ui5/webcomponents-react';
+import { Label, Table, TableCell, TableColumn, TableRow, Panel, ComboBox, ComboBoxItem, Button } from '@ui5/webcomponents-react';
 import { Trash2 } from "lucide-react";
 
 
@@ -54,6 +54,7 @@ const page = () => {
 										strokeWidth={1.75}
 										absoluteStrokeWidth
 										className="h-6 w-6 mt-3 ml-3 text-center text-red-500"
+                    style={{cursor: "pointer"}}
 									/>
         </Label>
       </TableCell>
@@ -96,6 +97,7 @@ const page = () => {
 										strokeWidth={1.75}
 										absoluteStrokeWidth
 										className="h-6 w-6 mt-3 ml-3 text-center text-red-500"
+                    style={{cursor: "pointer"}}
 									/>
         </Label>
       </TableCell>
@@ -108,17 +110,17 @@ const page = () => {
       </TableCell>
       <TableCell className='border to-gray-700'>
         <Label>
-          Oracle
+          SQL Server
         </Label>
       </TableCell>
       <TableCell className='border to-gray-700'>
         <Label>
-          Local Oracle
+          Local SQL Server
         </Label>
       </TableCell>
       <TableCell className='border to-gray-700'>
         <Label>
-          sysdba
+          sa
         </Label>
       </TableCell>
       <TableCell className='border to-gray-700'>
@@ -128,7 +130,7 @@ const page = () => {
       </TableCell>
       <TableCell className='border to-gray-700'>
         <Label>
-          1521
+          1433
         </Label>
       </TableCell>
       <TableCell className='border to-gray-700'>
@@ -137,6 +139,7 @@ const page = () => {
 										strokeWidth={1.75}
 										absoluteStrokeWidth
 										className="h-6 w-6 mt-3 ml-3 text-center text-red-500"
+                    style={{cursor: "pointer"}}
 									/>
         </Label>
       </TableCell>
@@ -157,12 +160,28 @@ const page = () => {
 				<ComboBoxItem text="MySQL" />
 				<ComboBoxItem text="MSSQL" />
 			</ComboBox>
-      <div className=''>
-    <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='Connection Name... '/>
-    <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='User Id...'/>
-    <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='PassWord...'/>
-    <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='Port Number...'/>
-    </div>
+      <div className='flex gap-2'>
+        <div className="flex-1">
+          <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='Connection Name... '/>
+        </div>
+        <div className="flex-1">
+          <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='User Id...'/>
+        </div>
+      </div>
+      <div className='flex gap-2'>
+        <div className="flex-1">
+          <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='PassWord...'/>
+        </div>
+        <div className="flex-1">
+          <input className='border border-slate-600 mt-2 rounded-lg p-2' type="text" placeholder='Port Number...'/>
+        </div>
+      </div>
+        <Button
+          className='border border-slate-600 mt-2'
+          onClick={function _a(){}}
+        >
+          Save Detalis
+        </Button>
   </Panel>
   </div>
   </div>
