@@ -4,7 +4,7 @@ import { PieChart } from "@ui5/webcomponents-react-charts";
 const PieChartComp = () => {
 	return (
 		<div className="bg-white rounded-xl">
-			<h4 className="text-center pt-3 font-bold mb-1 text-xl">UAR Overview</h4>
+			<h4 className="text-center pt-3 font-bold mb-1 text-xl">Most Revoked Roles</h4>
 			<div className="mt-3">
 				<PieChart
 					dataset={[

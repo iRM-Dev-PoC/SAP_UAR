@@ -10,7 +10,7 @@ const AnalyticalCardComp = () => {
 			style={{ width: "100%", height: "100%" }}
 			header={
 				<AnalyticalCardHeader
-					description="Year, 2023"
+					description="Year, 2023 - Q1"
 					state="Error"
 					subtitleText="Pending Reviews"
 					titleText="UAR Overview"

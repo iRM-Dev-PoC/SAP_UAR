@@ -27,9 +27,9 @@ const DashBoard = () => {
 
 	return (
 		<>
-			<div>
+			{/* <div>
 				<h2 className="text-center text-black font-semibold text-2xl mb-2 mt-1">{`Welcome ${userName}!`}</h2>
-			</div>
+			</div> */}
 
 			<div className="flex justify-between gap-x-7 pr-0 mr-7 ml-3">
 				<CustomCard

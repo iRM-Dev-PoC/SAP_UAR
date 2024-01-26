@@ -145,7 +145,7 @@ const UarReview = () => {
                   Search
                 </Button>
                 &nbsp;
-                <Button icon="update" className="bg-slate-300">
+                <Button icon="update" className="bg-gray-200">
                   Update
                 </Button>
               </td>

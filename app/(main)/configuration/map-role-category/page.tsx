@@ -50,13 +50,16 @@ const page = () => {
             -Select Category-
           </Option>
           <Option>
-            Option 1
+            High Category
           </Option>
           <Option>
-            Option 2
+            View Roles
           </Option>
           <Option>
-            Option 3
+            Read Only Roles
+          </Option>
+          <Option>
+            Custom Roles
           </Option>
         </Select>
       </TableCell>
@@ -88,13 +91,16 @@ const page = () => {
             -Select Category-
           </Option>
           <Option>
-            Option 1
+            High Category
           </Option>
           <Option>
-            Option 2
+            View Roles
           </Option>
           <Option>
-            Option 3
+            Read Only Roles
+          </Option>
+          <Option>
+            Custom Roles
           </Option>
         </Select>
       </TableCell>
@@ -126,13 +132,16 @@ const page = () => {
             -Select Category-
           </Option>
           <Option>
-            Option 1
+            High Category
           </Option>
           <Option>
-            Option 2
+            View Roles
           </Option>
           <Option>
-            Option 3
+            Read Only Roles
+          </Option>
+          <Option>
+            Custom Roles
           </Option>
         </Select>
       </TableCell>
@@ -164,13 +173,16 @@ const page = () => {
             -Select Category-
           </Option>
           <Option>
-            Option 1
+            High Category
           </Option>
           <Option>
-            Option 2
+            View Roles
           </Option>
           <Option>
-            Option 3
+            Read Only Roles
+          </Option>
+          <Option>
+            Custom Roles
           </Option>
         </Select>
       </TableCell>
