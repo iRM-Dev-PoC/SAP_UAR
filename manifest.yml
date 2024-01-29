@@ -1,0 +1,8 @@
+[10:51 AM] Riju Das
+applications:
+  - name: uar
+    path: ./.next/
+    buildpacks:
+      - https://github.com/cloudfoundry/staticfile-buildpack.git
+    memory: 3072M
+    random-route: true
